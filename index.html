@@ -71,14 +71,43 @@
     <script>
         /* Only for Demo proposal */
         var date = new Date(); // Now
-        date.setDate(date.getDate() + 30); // Set now + 30 days as the new date
-        const ye = new Intl.DateTimeFormat('en', { year: 'numeric' }).format(date);
-        const mo = new Intl.DateTimeFormat('en', { month: 'numeric' }).format(date);
-        const da = new Intl.DateTimeFormat('en', { day: '2-digit' }).format(date);
-        const dateText = ye + '/' + mo + '/' + da;
+        date.setDate('2021/09/11 08:00:00'); // Set now + 30 days as the new date
+        //const ye = new Intl.DateTimeFormat('en', { year: 'numeric' }).format(date);
+        //const mo = new Intl.DateTimeFormat('en', { month: 'numeric' }).format(date);
+        //const da = new Intl.DateTimeFormat('en', { day: '2-digit' }).format(date);
+        //const dateText = ye + '/' + mo + '/' + da;
 
-  
     </script>
+    <style>
+        ul li a.js-scroll-trigger {
+            font-size: 20px
+        }
+    </style>
+    <style>
+        .addToCalendar {
+            background-color: #44c767;
+            border-radius: 28px;
+            border: 1px solid #18ab29;
+            display: inline-block;
+            cursor: pointer;
+            color: #ffffff;
+            font-family: Arial;
+            font-size: 16px;
+            padding: 16px 31px;
+            text-decoration: none;
+            text-shadow: 0px 1px 0px #2f6627;
+        }
+
+            .addToCalendar:hover {
+                background-color: #5cbf2a;
+            }
+
+            .addToCalendar:active {
+                position: relative;
+                top: 1px;
+            }
+    </style>
+    
 </head>
 
 <body id="page-top">
@@ -128,7 +157,7 @@
 
         <header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url(images/img_bg_5.jpg);"
                 data-stellar-background-ratio="0.5">
-            <div class="overlay"></div>
+            <div class="overlay"> button</div>
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2 text-center">
@@ -193,7 +222,7 @@
         </section>
 
         <div id="fh5co-event" class="fh5co-bg" style="background-image:url(images/img_bg_3.jpg);">
-            <div class="overlay"></div>
+            <!--<div class="overlay"></div>-->
             <div class="container">
                 <div id="undangan" class="row">
                     <div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
@@ -207,7 +236,7 @@
                             <div class="countdown show test_3" data-Date='2021/09/11 08:00:00'>
                                 <script>
                                     //Only for demo proposal
-                                    $('.test_3').attr('data-date', dateText);
+                                    //$('.test_3').attr('data-date', dateText);
                                 </script>
                                 <!--<h2>Live with Elisa Smith</h2>-->
                                 <div class="running">
@@ -221,13 +250,14 @@
                                     <div class="break"></div>
                                     <!--<div class="text">until Concert begins</div>-->
                                     <div class="break"></div>
+                                    <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&dates=20210911T010000Z%2F20210911T060000Z&text=Wedding%20Egi%20%26%20Muti" class="addToCalendar">Save the date</a>
                                     <!--<button>Buy Ticket Now!</button>-->
                                 </div>
 
                                 <div class="ended">
-                                    <div class="text">Show is ended</div>
+                                    <div class="text">Wedding is ended</div>
                                     <div class="break"></div>
-                                    <button>Suscribe for next event!</button>
+                                    <!--<button>Suscribe for next event!</button>-->
                                 </div>
                             </div>
                             <div class="col-md-10 col-md-offset-1">
@@ -285,6 +315,7 @@
                     <div class="row">
                         <div class="col-md-8 col-md-offset-2 text-center animate-box">
                             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.135208621998!2d106.99314961442049!3d-6.245906995478935!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xc700df9e96c02065!2sBekasi%20Islamic%20Centre!5e0!3m2!1sen!2sid!4v1628928654234!5m2!1sen!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            <a href="https://maps.app.goo.gl/TTVbUDUXkmfvy1dc6" class="addToCalendar">Open Map</a>
                         </div>
                     </div>
                 </div>
