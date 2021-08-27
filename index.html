@@ -111,10 +111,32 @@
             }
         
     </style>
-    
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 
 <body id="page-top">
+
+    <div class="modal" id="myModal" role="dialog">
+        <div class="modal-dialog">
+        
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Walimatul Urs</h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+              <p>Undangan Pernikahan Egi & Muti</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default close" data-dismiss="modal" value="sound" onclick="playMusic()">Close</button>
+            </div>
+          </div>
+          
+        </div>
+      </div>
 
     <div class="fh5co-loader"></div>
 
@@ -170,7 +192,6 @@
                                 <h2>Insya Allah</h2>
                                 <h1>Egi &amp; Muti</h1>
                                 <h2>Sabtu, 11 September  2021</h2>
-
                                 <p><a href="#mempelai" class="js-scroll-trigger btn btn-default btn-sm">Detail</a></p>
                             </div>
                         </div>
@@ -450,7 +471,13 @@
         <a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
     </div>
     <script type="text/javascript">
-
+     $(document).ready(function(){
+        $("#myModal").modal('show');
+    });
+function playMusic(){
+  var music = new Audio('music/horse.ogv');
+  music.play();
+  }
 
 
     </script>
