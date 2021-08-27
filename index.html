@@ -85,12 +85,12 @@
     </style>
     <style>
         .addToCalendar {
-            background-color: #44c767;
+            background-color: #616060;
             border-radius: 28px;
             border: 1px solid #18ab29;
             display: inline-block;
             cursor: pointer;
-            color: #ffffff;
+            color: #FFFFFF;
             font-family: Arial;
             font-size: 16px;
             padding: 16px 31px;
@@ -111,6 +111,36 @@
             }
             #fh5co-logo{
                 width: 250px;
+            }
+
+            .UndanganCover{
+                height: 100px;
+    
+    background-repeat: no-repeat;
+    position: relative;
+    width: 100%;
+            }
+            .Undangan{
+                text-align: center;
+    background-color: #e4e4e4;
+    margin: 22px;
+    padding: 20px;
+    border-radius: 30px;
+
+            }
+
+            .Undangan .running{
+                display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-flow: wrap;
+    flex-flow: wrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+
+
+
             }
     </style>
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -193,7 +223,7 @@
             </div>
         </nav>
 
-        <header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url(images/img_bg_5.jpg);"
+        <header id="fh5co-couple-story" role="banner" style="background-image:url(images/img_bg_5.jpg);"
                 data-stellar-background-ratio="0.5">
             <div class="overlay"></div>
             <div class="container">
@@ -201,16 +231,45 @@
                     <div class="col-md-8 col-md-offset-2 text-center">
                         <div class="display-t">
                             <div class="display-tc animate-box" data-animate-effect="fadeIn">
-                                <h2>Insya Allah</h2>
-                                <h1>Egi &amp; Muti</h1>
-                                <h2>Sabtu, 11 September  2021</h2>
-                                <p><a href="#mempelai" class="js-scroll-trigger btn btn-default btn-sm">Detail</a></p>
+                                <div class="Undangan" style="display: block; color:#8c0734">
+                                    <!--<h2>Live with Elisa Smith</h2>-->
+                                    <div class="running" style="display: flex;">
+                                        <div class="labels">
+                                            <br>
+                                            <h2 style="color:#8c0734"><p>Kepada yth.</p>
+                                            <p class="name"></p>
+                                            <p>Di</p>
+                                            <p class="tempat"></p></h2>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </header>
+
+        <section>
+            <div id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url(images/img_bg_5.jpg);"
+            data-stellar-background-ratio="0.5">
+            <div class="overlay"></div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8 col-md-offset-2 text-center">
+                            <div class="display-t">
+                                <div class="display-tc animate-box" data-animate-effect="fadeIn">
+                                    <h2>Insya Allah</h2>
+                                <h1>Egi &amp; Muti</h1>
+                                <h2>Sabtu, 11 September  2021</h2>
+                                <p><a href="#mempelai" class="js-scroll-trigger addToCalendar">Detail</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>                    
+                </div>
+            </div>
+        </section>
 
         <section>
             <div id="fh5co-couple">
@@ -484,6 +543,18 @@
     </div>
     <script type="text/javascript">
      $(document).ready(function(){
+        const params = new URLSearchParams(window.location.search)
+        console.log(params.has('name'), params.has('di'))
+        if (params.has('name')&& params.has('di')){
+            $("#fh5co-couple-story").css("display","block");
+            $(".name").html(params.get('name').toUpperCase());
+        $(".tempat").html(params.get('di'));
+        
+        }else{
+            $("#fh5co-couple-story").css("display","none");
+        }
+        
+        
         var music = new Audio('music/Bruno Mars - Marry You [321 kbps].mp3');
         $("#myModal").modal('show');
         $("#myModal").on("hidden.bs.modal",function() 
