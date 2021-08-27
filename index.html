@@ -109,7 +109,9 @@
             @media (max-width: 800px){
                 a.js-fh5co-nav-toggle {display: none;}
             }
-        
+            #fh5co-logo{
+                width: 250px;
+            }
     </style>
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -129,6 +131,13 @@
             </div>
             <div class="modal-body">
               <p>Undangan Pernikahan Egi & Muti</p>
+<br>
+                <p>Sehubungan dengan adanya wabah Covid-19, mohon untuk selalu mengikuti himbauan pemerintah sebagai berikut:</p>
+                    <p>1. Selalu menggunakan masker dan membawa hand sanitizer</p>
+                        <p>2. Mematuhi protokol kesehatan dan menjaga jarak</p>
+                            <p>3. Jika sedang merasa sakit, dimohon untuk tetap beristirahat di Rumah</p>
+<br>
+                                <p>Semoga wabah Covid-19 segera berlalu dan kita semua selalu diberikan kesehatan. Terima kasih.</p>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-default close" data-dismiss="modal" value="sound" onclick="playMusic()">Close</button>
@@ -150,6 +159,9 @@
                                 <a class="js-scroll-trigger" href="#page-top">
                                     E&M<strong>.</strong>
                                 </a>
+                                <a style="color: #F14E95; width: 50px;" class="music" href="#javascript;"></a>
+                                   
+                                
                             </div>                            
                         </div>
 
@@ -472,13 +484,32 @@
     </div>
     <script type="text/javascript">
      $(document).ready(function(){
+        var music = new Audio('music/Bruno Mars - Marry You [321 kbps].mp3');
         $("#myModal").modal('show');
+        $("#myModal").on("hidden.bs.modal",function() 
+        {playMusic(music)})
+        
+        $(".music").addClass("icon-sound");
+        $(".music").on("click",function(){
+            if ($(".music").hasClass("icon-sound")){
+                $(".music").removeClass("icon-sound")
+                $(".music").addClass("icon-sound-mute");
+                stopMusic(music)
+            }else if ($(".music").hasClass("icon-sound-mute")){
+                $(".music").removeClass("icon-sound-mute")
+                $(".music").addClass("icon-sound");
+                playMusic(music)
+            }
+        });
     });
-function playMusic(){
-  var music = new Audio('music/horse.ogv');
+function playMusic(music){
   music.play();
+  music.loop = true;
   }
 
+  function stopMusic(music){
+  music.pause();
+  }
 
     </script>
 
